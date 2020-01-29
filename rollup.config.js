@@ -24,10 +24,10 @@ export default [
 	{
 		input: "src/main.ts",
 		output: {
-			name: "WebComponentRedux",
+			name: "WebComponentsRedux",
 			format: "iife",
 			esModule: false,
-			file: process.env.NODE_ENV === production ? pkg.browser : "dist/webcomponent-redux.js"
+			file: process.env.NODE_ENV === production ? pkg.browser : "dist/webcomponents-redux.js"
 		},
 		plugins: plugins
 	},

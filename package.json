@@ -1,20 +1,19 @@
 {
-  "name": "webcomponent-redux",
+  "name": "webcomponents-redux",
   "version": "0.0.1",
   "description": "Redux binding for web component",
   "main": "dist/index.node.js",
   "module": "dist/index.js",
-  "browser": "dist/webcomponent-redux.min.js",
-  "unpkg": "dist/webcomponent-redux.min.js",
+  "browser": "dist/webcomponents-redux.min.js",
+  "unpkg": "dist/webcomponents-redux.min.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sheeshpaul/webcomponent-redux.git"
+    "url": "git://github.com/sheeshpaul/webcomponents-redux.git"
   },
   "author": "Sheeshpaul Kamboj <sheeshpaul@hotmail.com>",
   "license": "MIT",
   "sideEffects": false,
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "rollup": "^1.30.1",
     "rollup-plugin-commonjs": "^10.1.0",
