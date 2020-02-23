@@ -46,10 +46,10 @@ export const mixinWebcomponent: MixinWebComponent = {
     connectState() {
         // Step 1: To the instance add dispatch functions as properties
         if (this.mapDispatchToProps) {
-            let obj = this.mapDispatchToProps(this.mixinStore!.dispatch);
+            const obj = this.mapDispatchToProps(this.mixinStore!.dispatch);
 
             if (obj) {
-                for (let key in obj) {
+                for (const key in obj) {
                     // @ts-ignore
                     this[key] = obj[key];
                 }
@@ -57,7 +57,7 @@ export const mixinWebcomponent: MixinWebComponent = {
         }
 
         // Step 2: Get the current state and trigger initial mapStateToAttributes
-        let nextState = this.mixinStore!.getState();
+        const nextState = this.mixinStore!.getState();
 
         this.mapStateToProps && this.mapStateToProps(this.mixinState, nextState);
 
@@ -83,7 +83,7 @@ export const mixinWebcomponent: MixinWebComponent = {
      * Upon state change, call mapStateToProps, only when next state is different than current state.
      */
     onMixinStateChange() {
-        let nextState = this.mixinStore!.getState();
+        const nextState = this.mixinStore!.getState();
 
         if (nextState === this.mixinState) {
             return;
@@ -92,5 +92,5 @@ export const mixinWebcomponent: MixinWebComponent = {
         this.mapStateToProps && this.mapStateToProps(this.mixinState, nextState);
 
         this.mixinState = nextState;
-    }
-}
+    },
+};

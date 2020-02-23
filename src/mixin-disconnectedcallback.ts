@@ -22,5 +22,5 @@ export const mixinDisconnectedCallback: MixinDisconnectedCallback = {
 
         //@ts-ignore
         this.disconnectState();
-    }
+    },
 };

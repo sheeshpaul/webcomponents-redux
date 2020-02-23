@@ -23,7 +23,7 @@ export default [
 			typescript({ tsconfigOverride: noDeclarationFiles }), // Convert TypeScript to JavaScript
 			replace({
 				exclude: "node_modules/**",
-				ENV: JSON.stringify("development"),
+				"process.env.NODE_ENV": JSON.stringify("development")
 			})
 		]
 	},
@@ -43,18 +43,9 @@ export default [
 			typescript({ tsconfigOverride: noDeclarationFiles }), // Convert TypeScript to JavaScript
 			replace({
 				exclude: "node_modules/**",
-				ENV: JSON.stringify("production"),
+				"process.env.NODE_ENV": JSON.stringify("production")
 			}),
 			uglify()
-		]
-	},
-
-	// CommonJS
-	{
-		input: "src/index.ts",
-		output: { file: pkg.main, format: "cjs", indent: false },
-		plugins: [
-			typescript({ useTsconfigDeclarationDir: true })
 		]
 	},
 
@@ -64,6 +55,15 @@ export default [
 		output: { file: pkg.module, format: "es", indent: false },
 		plugins: [
 			typescript({ tsconfigOverride: noDeclarationFiles })
+		]
+	},
+
+	// CommonJS
+	{
+		input: "src/index.ts",
+		output: { file: pkg.main, format: "cjs", indent: false },
+		plugins: [
+			typescript({ useTsconfigDeclarationDir: true })
 		]
 	}
 ];

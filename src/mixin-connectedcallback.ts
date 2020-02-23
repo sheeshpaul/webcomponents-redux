@@ -22,5 +22,5 @@ export const mixinConnectedCallback: MixinConnectedCallback = {
 
         // @ts-ignore
         this.connectState();
-    }
+    },
 };
