@@ -1,5 +1,5 @@
 # Web Components Redux
-React  webcomponents-redux is Web Components bindings for Redux.
+webcomponents-redux is Web Components binding for Redux.
 
 # Quick Start Guide
 - [Installation](#installation)
@@ -29,7 +29,8 @@ npm install --save redux webcomponents-redux
 
 ## Web Components Redux Basics
 ### Single Class Model
-### Presentation and Container Classes Model
+<script src="https://gist.github.com/sheeshpaul/99ab62f39df94e35e843b569364a22b4.js"></script>
+### Presentation and Container Class Model
 
 ## connect
 
