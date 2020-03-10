@@ -30,6 +30,7 @@ npm install --save redux webcomponents-redux
 ## Web Components Redux Basics
 ### Single Class Model
 <script src="https://gist.github.com/sheeshpaul/99ab62f39df94e35e843b569364a22b4.js"></script>
+{% gist 99ab62f39df94e35e843b569364a22b4 %}
 ### Presentation and Container Class Model
 
 ## connect
