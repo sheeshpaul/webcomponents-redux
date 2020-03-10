@@ -50,7 +50,29 @@ class CounterElement extends HTMLElement {
 }
 ```
 ### Presentation and Container Class Model
+```javascript
+class CounterElement extends HTMLElement {
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'value') {
+            this.countElement.innerText = newValue;
+        }
+    }
+}
 
+class CounterElementStateful extends CounterElement {
+    mapStateToProps(oldState, newState) {
+        if (oldState === undefined) {
+            super.attributeChangedCallback('value', null, newState.counter.count);
+            return;
+        }
+
+        if (newState.counter.count !== oldState.counter.count) {
+            super.attributeChangedCallback('value', oldState.counter.count, newState.counter.count);
+        }
+    }
+
+}
+```
 ## connect
 
 
