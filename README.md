@@ -31,20 +31,6 @@ npm install --save redux webcomponents-redux
 ### Single Class Model
 ```javascript
 class CounterElement extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
-
-    static get observedAttributes() {
-        return ['value'];
-    }
-
-    connectedCallback() {
-        this.shadowRoot.innerHTML = `<div>Value is 0</div>`;
-        this.connectState();
-    }
-
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'value') {
             this.shadowRoot.innerHTML = `<div>Value is ${newValue}</div>`;
@@ -62,9 +48,6 @@ class CounterElement extends HTMLElement {
         }
     }
 }
-
-connect(CounterElementV1, store);
-customElements.define('counter-element', CounterElement);
 ```
 ### Presentation and Container Class Model
 
