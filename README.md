@@ -89,7 +89,7 @@ class CounterElementStateful extends CounterElement {
 }
 ```
 ### Example Project
-For a complete example, see [webcomponents-redux-sample](https://github.com/sheeshpaul/webcomponents-redux-sample) repository for a sample Web Coomponent implementation.
+For complete example, see [webcomponents-redux-sample](https://github.com/sheeshpaul/webcomponents-redux-sample) repository for sample Web Coomponent implementation.
 
 ## connect
 
