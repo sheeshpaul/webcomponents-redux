@@ -8,6 +8,7 @@ webcomponents-redux is Web Components binding for Redux.
 - [Web Components Redux Basics](#web-components-redux-basics)
   - [Single Class Model](#single-class-model)
   - [Presentation and Container Classes Model](#presentation-and-container-classes-model)
+  - [Example Project](#example-project)
 - [connect](#connect)
 - [mapStateToProps](#mapStateToProps)
 - [mapDispatchToProps](#mapDispatchToProps)
@@ -87,6 +88,8 @@ class CounterElementStateful extends CounterElement {
     }
 }
 ```
+### Example Project
+For a complete example, see [webcomponents-redux-sample](https://github.com/sheeshpaul/webcomponents-redux-sample) repository for a sample Web Coomponent implementation.
 
 ## connect
 
