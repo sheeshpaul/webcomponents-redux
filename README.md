@@ -28,15 +28,15 @@ npm install --save redux webcomponents-redux
 ```
 
 ## Web Components Redux Basics
-For a Web Component call connect from webcomponents-redux package, passing the Web Component class and the Redux store.
+For a Web Component call **connect** from webcomponents-redux package, passing the Web Component class and the Redux store. The connect function adds Redux binding logic to the Web Component class.
 
 ```javascript
 import { connect } from 'webcomponents-redux';
 connect(CounterElement, store);
 ```
-The connect function adds Redux binding logic to the Web Component class. Web Component class implements mapStateTopProps function to get notified on state change, and implements mapDispatchToProps for functions to trigger actions.
+Web Component class implements **mapStateTopProps** function to get notified for state change, and implements **mapDispatchToProps** for functions to dispatch actions.
 
-There two ways to integrate Redux into a Web Component.
+There are two ways to integrate Redux into a Web Component.
 
 ### Single Class Model
 In a single class model, both UI and Redux logic is in one class.
