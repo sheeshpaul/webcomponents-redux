@@ -39,7 +39,7 @@ Web Component class implements **mapStateTopProps** function to get notified for
 There are two ways to integrate Redux into a Web Component.
 
 ### Single Class Model
-In a single class model, both UI and Redux logic is in one class.
+In a single class model, both UI and Redux logic is in one class. In the example CounterElement class below, mapStateToProps is implemented in the same class.
 
 ```javascript
 class CounterElement extends HTMLElement {
@@ -63,6 +63,8 @@ class CounterElement extends HTMLElement {
 ```
 
 ### Presentation and Container Class Model
+In this model, the presentation class only has the UI logic and Redux logic exist in Container class. This is shown in the example below.
+
 ```javascript
 class CounterElement extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
@@ -85,6 +87,7 @@ class CounterElementStateful extends CounterElement {
     }
 }
 ```
+
 ## connect
 
 
