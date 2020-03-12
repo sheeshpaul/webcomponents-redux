@@ -93,6 +93,25 @@ For complete example, see [webcomponents-redux-sample](https://github.com/sheesh
 
 ## connect
 
+**connect(class, store)**
+
+The connect function connects a Web Component to a Redux store.
+
+**Arguments**
+
+`class`: The Web Component class
+
+`store`: The Redux store object
+
+**Returns**
+
+The connect function returns void.
+
+**Example**
+```javascript
+import { connect } from 'webcomponents-redux';
+connect(CounterElement, store);
+```
 
 ## mapStateToProps
 
