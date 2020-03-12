@@ -30,7 +30,7 @@ npm install --save redux webcomponents-redux
 ```
 
 ## Web Components Redux Basics
-For a Web Component call **connect** from webcomponents-redux package, passing the Web Component class and the Redux store. The connect function adds Redux binding logic to the Web Component class.
+For a Web Component call **connect** from webcomponents-redux package, passing the Web Component class and the Redux store object. The connect function adds Redux binding logic to the Web Component class.
 
 ```javascript
 import { connect } from 'webcomponents-redux';
