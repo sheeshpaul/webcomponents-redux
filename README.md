@@ -100,7 +100,7 @@ For complete example, see [webcomponents-redux-sample](https://github.com/sheesh
 
 The connect function connects a Web Component to a Redux store.
 
-The connect function checks if the Web Component class implements `connectedCallback()` function. When the Web Component class does not, the connect function adds to the class default implementation of connectedCallback() function which calls the connectState() to setup the state management. The connect function does similar check for `disconnectedCallback()`, and when missing, ads to the Web Component class default implementation of disconnectedCallback() function which calls the disconnectState() to cleanup state management.
+The connect function checks if the Web Component class implements `connectedCallback()` function. When the Web Component class does not, the connect function adds to the class default implementation of connectedCallback() function which calls the connectState() to setup the state management. The connect function does similar check for `disconnectedCallback()`, and when missing, adds to the Web Component class default implementation of disconnectedCallback() function which calls the disconnectState() to cleanup state management.
 
 **Arguments**
 
@@ -110,7 +110,7 @@ The connect function checks if the Web Component class implements `connectedCall
 
 **Returns**
 
-The connect function returns void.
+The function returns void.
 
 **Example**
 
@@ -121,11 +121,51 @@ connect(CounterElement, store);
 
 ### connectState
 
+**connectState()**
 
+The Web Compoent class in its `connectedCallback()` function, calls connectState() function to setup the state management.
+
+**Arguments**
+
+The function takes no arguments.
+
+**Returns**
+
+The function returns void.
+
+**Example**
+
+```javascript
+connectedCallback() {
+    // Logic for component connect goes here
+
+    this.connectState();
+}
+```
 
 ### disconnectState
 
+**disconnectState()**
 
+The Web Compoent class in its `disconnectedCallback()` function, calls disconnectState() function to cleanup the state management.
+
+**Arguments**
+
+The function takes no arguments.
+
+**Returns**
+
+The function returns void.
+
+**Example**
+
+```javascript
+disconnectedCallback() {
+    // Logic for component disconnect goes here
+
+    this.disconnectState();
+}
+```
 
 ### mapStateToProps
 
@@ -141,7 +181,7 @@ The Web Component class implements the mapStateToProps function. The mapStateToP
 
 **Returns**
 
-The mapStateToProps function returns void.
+The function returns void.
 
 **Example**
 
