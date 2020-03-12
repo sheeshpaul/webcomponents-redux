@@ -150,6 +150,28 @@ mapStateToProps(oldState, newState) {
 
 ### mapDispatchToProps
 
+**mapDispatchToProps(dispatch)**
+
+The Web Component class implements the mapDispatchToProps function. The mapDispatchToProps function is only called one time upon store connect, and should return an object, where each field of the object is a function, which is expected to dispatch an action to the store.
+
+**Arguments**
+
+`dispatch`: Redux store's dispatch function
+
+**Returns**
+
+Returns an object, where each field of the object is a function, which is expected to dispatch an action to the store.
+
+**Example**
+
+```javascript
+mapDispatchToProps(dispatch) {
+    return {
+        increment: () => dispatch({ type: 'INCREMENT' }),
+        decrement: () => dispatch({ type: 'DECREMENT' }),
+    };
+}
+```
 
 ### Overriding connectedCallback
 
