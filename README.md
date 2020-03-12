@@ -11,10 +11,10 @@ webcomponents-redux is Web Components binding for Redux.
   - [Sample Project](#sample-project)
 - [API Reference](#api-reference)
   - [connect](#connect)
+  - [connectState](#connectState)
+  - [disconnectState](#disconnectState)
   - [mapStateToProps](#mapStateToProps)
   - [mapDispatchToProps](#mapDispatchToProps)
-  - [Overriding connectedCallback](#overriding-connectedCallback)
-  - [Overriding disconnectedCallback](#overriding-disconnectedCallback)
 
 ## Installation
 ### Script Tag
@@ -100,6 +100,8 @@ For complete example, see [webcomponents-redux-sample](https://github.com/sheesh
 
 The connect function connects a Web Component to a Redux store.
 
+The connect function checks if the Web Component class implements `connectedCallback()` function. When the Web Component class does not, the connect function adds to the class default implementation of connectedCallback() function which calls the connectState() to setup the state management. The connect function does similar check for `disconnectedCallback()`, and when missing, ads to the Web Component class default implementation of disconnectedCallback() function which calls the disconnectState() to cleanup state management.
+
 **Arguments**
 
 `class`: The Web Component class
@@ -116,6 +118,14 @@ The connect function returns void.
 import { connect } from 'webcomponents-redux';
 connect(CounterElement, store);
 ```
+
+### connectState
+
+
+
+### disconnectState
+
+
 
 ### mapStateToProps
 
@@ -172,11 +182,6 @@ mapDispatchToProps(dispatch) {
     };
 }
 ```
-
-### Overriding connectedCallback
-
-
-### Overriding disconnectedCallback
 
 # License
 MIT
