@@ -9,11 +9,12 @@ webcomponents-redux is Web Components binding for Redux.
   - [Single Class Model](#single-class-model)
   - [Presentation and Container Classes Model](#presentation-and-container-classes-model)
   - [Sample Project](#sample-project)
-- [connect](#connect)
-- [mapStateToProps](#mapStateToProps)
-- [mapDispatchToProps](#mapDispatchToProps)
-- [Overriding connectedCallback](#overriding-connectedCallback)
-- [Overriding disconnectedCallback](#overriding-disconnectedCallback)
+- [API Reference](#api-reference)
+  - [connect](#connect)
+  - [mapStateToProps](#mapStateToProps)
+  - [mapDispatchToProps](#mapDispatchToProps)
+  - [Overriding connectedCallback](#overriding-connectedCallback)
+  - [Overriding disconnectedCallback](#overriding-disconnectedCallback)
 
 ## Installation
 ### Script Tag
@@ -91,7 +92,9 @@ class CounterElementStateful extends CounterElement {
 ### Sample Project
 For complete example, see [webcomponents-redux-sample](https://github.com/sheeshpaul/webcomponents-redux-sample) repository for sample Web Coomponent implementation.
 
-## connect
+## API Reference
+
+### connect
 
 **connect(class, store)**
 
@@ -113,16 +116,16 @@ import { connect } from 'webcomponents-redux';
 connect(CounterElement, store);
 ```
 
-## mapStateToProps
+### mapStateToProps
 
 
-## mapDispatchToProps
+### mapDispatchToProps
 
 
-## Overriding connectedCallback
+### Overriding connectedCallback
 
 
-## Overriding disconnectedCallback
+### Overriding disconnectedCallback
 
 # License
 MIT
