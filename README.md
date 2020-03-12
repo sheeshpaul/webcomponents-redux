@@ -111,6 +111,7 @@ The connect function connects a Web Component to a Redux store.
 The connect function returns void.
 
 **Example**
+
 ```javascript
 import { connect } from 'webcomponents-redux';
 connect(CounterElement, store);
@@ -118,6 +119,34 @@ connect(CounterElement, store);
 
 ### mapStateToProps
 
+**mapStateToProps(oldState, newState)**
+
+The Web Component class implements the mapStateToProps function. The mapStateToProps function is called by the Redux binding logic whenever there a state change.
+
+**Arguments**
+
+`oldState`: The old state object. The oldState is undefined, when mapStateToProps is called first time upon store connect
+
+`newState`: The new state object
+
+**Returns**
+
+The mapStateToProps function returns void.
+
+**Example**
+
+```javascript
+mapStateToProps(oldState, newState) {
+    if (oldState === undefined) {
+        this.attributeChangedCallback('value', null, newState.counter.count);
+        return;
+    }
+
+    if (newState.counter.count !== oldState.counter.count) {
+        this.attributeChangedCallback('value', oldState.counter.count, newState.counter.count);
+    }
+}
+```
 
 ### mapDispatchToProps
 
