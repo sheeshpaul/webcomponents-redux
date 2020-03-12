@@ -1,5 +1,5 @@
 # Web Components Redux
-webcomponents-redux is Web Components binding for Redux.
+Web Components binding for Redux.
 
 # Quick Start Guide
 - [Installation](#installation)
