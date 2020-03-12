@@ -1,7 +1,7 @@
 {
   "name": "webcomponents-redux",
-  "version": "0.0.3",
-  "description": "Redux binding for web component",
+  "version": "1.0.0",
+  "description": "Web Components binding for Redux",
   "license": "MIT",
   "repository": {
     "type": "git",
