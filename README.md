@@ -98,8 +98,6 @@ For complete example, see [webcomponents-redux-sample](https://github.com/sheesh
 
 The connect function connects a Web Component to a Redux store.
 
-The connect function checks if the Web Component class implements `connectedCallback()` function. When the Web Component class does not, the connect function adds to the class default implementation of connectedCallback() function which calls the connectState() to setup the state management. The connect function does similar check for `disconnectedCallback()`, and when missing, adds to the Web Component class default implementation of disconnectedCallback() function which calls the disconnectState() to cleanup state management.
-
 **Arguments**
 
 `class`: The Web Component class
@@ -114,6 +112,11 @@ The function returns void.
 
 ```javascript
 import { connect } from 'webcomponents-redux';
+
+class CounterElement extends HTMLElement {
+    // Class logic goes here
+}
+
 connect(CounterElement, store);
 ```
 
@@ -121,11 +124,13 @@ connect(CounterElement, store);
 
 **mapStateToProps(oldState, newState)**
 
-The Web Component class implements the mapStateToProps function. The mapStateToProps function is called by the Redux binding logic whenever there a state change.
+The Web Component class implements the mapStateToProps function to get notified of state change.
+
+The first time mapStateToProps function is called, is during connectedCallback lifecycle. After that on any state change, the mapStateToProps function is called.
 
 **Arguments**
 
-`oldState`: The old state object. The oldState is undefined, when mapStateToProps is called first time upon store connect
+`oldState`: The old state object. The oldState is undefined, when mapStateToProps is called first time during connectedCallback lifecycle
 
 `newState`: The new state object
 
@@ -152,7 +157,7 @@ mapStateToProps(oldState, newState) {
 
 **mapDispatchToProps(dispatch)**
 
-The Web Component class implements the mapDispatchToProps function. The mapDispatchToProps function is only called one time upon store connect, and should return an object, where each field of the object is a function, which is expected to dispatch an action to the store.
+The Web Component class implements the mapDispatchToProps function. The mapDispatchToProps function is only called one time during connectedCallback lifecycle, and should return an object, where each field of the object is a function, which is expected to dispatch an action to the store.
 
 **Arguments**
 
