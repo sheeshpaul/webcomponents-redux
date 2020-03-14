@@ -6,21 +6,17 @@ interface MixinConnectedCallback {
 }
 
 /**
- * The mixin for generic connectedCallback implementation.
+ * The mixin for connectedCallback implementation.
  */
 export const mixinConnectedCallback: MixinConnectedCallback = {
     /**
-     * Generic implementation for Web Component connectedCallback lifecycle event.
-     * Calls the super and connects to Redux store.
+     * Calls the existing connectedCallback lifecycle event when present, and connects to Redux store.
      */
     connectedCallback() {
-        // Issue is super is not present here
-        // Walking the prototype chain to call the connectedCallback on parent (super)
+        // @ts-ignore
+        this.mixinExistingConnectedCallback && this.mixinExistingConnectedCallback();
 
         // @ts-ignore
-        this.__proto__.__proto__.connectedCallback.call(this);
-
-        // @ts-ignore
-        this.connectState();
+        this.mixinConnectState();
     },
 };

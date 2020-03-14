@@ -31,13 +31,11 @@ export function connect(className: Function, mixinStore: object): void {
 
     Object.assign(className.prototype, mixinWebcomponent);
 
-    if (!className.prototype.hasOwnProperty('connectedCallback')) {
-        Object.assign(className.prototype, mixinConnectedCallback);
-    }
+    className.prototype.mixinExistingConnectedCallback = className.prototype.connectedCallback;
+    Object.assign(className.prototype, mixinConnectedCallback);
 
-    if (!className.prototype.hasOwnProperty('disconnectedCallback')) {
-        Object.assign(className.prototype, mixinDisconnectedCallback);
-    }
+    className.prototype.mixinExistingDisconnectedCallback = className.prototype.disconnectedCallback;
+    Object.assign(className.prototype, mixinDisconnectedCallback);
 
     className.prototype.mixinStore = mixinStore;
 }

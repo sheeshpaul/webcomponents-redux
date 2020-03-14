@@ -14,9 +14,11 @@ interface MixinWebComponent {
     mixinStore: null | Store;
     mixinState: undefined | object;
     mixinUnsubscribeStore: null | Function;
-    connectState: Function;
-    disconnectState: Function;
-    onMixinStateChange: Function;
+    mixinExistingConnectedCallback: null | Function;
+    mixinExistingDisconnectedCallback: null | Function;
+    mixinConnectState: Function;
+    mixinDisconnectState: Function;
+    mixinOnStateChange: Function;
     mapDispatchToProps?: Function;
     mapStateToProps?: Function;
 }
@@ -41,9 +43,19 @@ export const mixinWebcomponent: MixinWebComponent = {
     mixinUnsubscribeStore: null,
 
     /**
+     * The existing connectedCallback function.
+     */
+    mixinExistingConnectedCallback: null,
+
+    /**
+     * The existing disconnectedCallback function.
+     */
+    mixinExistingDisconnectedCallback: null,
+
+    /**
      * Sets up state change and dispatch functionality.
      */
-    connectState() {
+    mixinConnectState() {
         // Step 1: To the instance add dispatch functions as properties
         if (this.mapDispatchToProps) {
             const obj = this.mapDispatchToProps(this.mixinStore!.dispatch);
@@ -64,15 +76,15 @@ export const mixinWebcomponent: MixinWebComponent = {
         // Step 3: Save the current state and subscribe to store change event
         this.mixinState = nextState;
 
-        this.onMixinStateChange = this.onMixinStateChange.bind(this);
+        this.mixinOnStateChange = this.mixinOnStateChange.bind(this);
 
-        this.mixinUnsubscribeStore = this.mixinStore!.subscribe(this.onMixinStateChange);
+        this.mixinUnsubscribeStore = this.mixinStore!.subscribe(this.mixinOnStateChange);
     },
 
     /**
      * Unsubscribe from store change events.
      */
-    disconnectState() {
+    mixinDisconnectState() {
         if (this.mixinUnsubscribeStore) {
             this.mixinUnsubscribeStore();
             this.mixinUnsubscribeStore = null;
@@ -82,7 +94,7 @@ export const mixinWebcomponent: MixinWebComponent = {
     /**
      * Upon state change, call mapStateToProps, only when next state is different than current state.
      */
-    onMixinStateChange() {
+    mixinOnStateChange() {
         const nextState = this.mixinStore!.getState();
 
         if (nextState === this.mixinState) {
