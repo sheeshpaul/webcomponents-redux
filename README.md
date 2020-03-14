@@ -11,8 +11,6 @@ Web Components binding for Redux.
   - [Sample Project](#sample-project)
 - [API Reference](#api-reference)
   - [connect](#connect)
-  - [connectState](#connectState)
-  - [disconnectState](#disconnectState)
   - [mapStateToProps](#mapStateToProps)
   - [mapDispatchToProps](#mapDispatchToProps)
 
@@ -117,54 +115,6 @@ The function returns void.
 ```javascript
 import { connect } from 'webcomponents-redux';
 connect(CounterElement, store);
-```
-
-### connectState
-
-**connectState()**
-
-The Web Compoent class in its `connectedCallback()` function, calls connectState() function to setup the state management.
-
-**Arguments**
-
-The function takes no arguments.
-
-**Returns**
-
-The function returns void.
-
-**Example**
-
-```javascript
-connectedCallback() {
-    // Logic for component connect goes here
-
-    this.connectState();
-}
-```
-
-### disconnectState
-
-**disconnectState()**
-
-The Web Compoent class in its `disconnectedCallback()` function, calls disconnectState() function to cleanup the state management.
-
-**Arguments**
-
-The function takes no arguments.
-
-**Returns**
-
-The function returns void.
-
-**Example**
-
-```javascript
-disconnectedCallback() {
-    // Logic for component disconnect goes here
-
-    this.disconnectState();
-}
 ```
 
 ### mapStateToProps
