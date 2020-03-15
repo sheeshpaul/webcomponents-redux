@@ -91,6 +91,6 @@ describe('connect', () => {
         expect(hasDisconnectedCallback).toBe(true);
 
         // @ts-ignore
-        expect(Component.prototype.mixinExistingDisconnectedCallback).toBe(existingDisconnectedCallback)
+        expect(Component.prototype.mixinExistingDisconnectedCallback).toBe(existingDisconnectedCallback);
     });
 });
