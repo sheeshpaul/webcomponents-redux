@@ -114,7 +114,7 @@ The function returns void.
 import { connect } from 'webcomponents-redux';
 
 class CounterElement extends HTMLElement {
-    // Class logic goes here
+    // Component logic goes here
 }
 
 connect(CounterElement, store);
@@ -124,9 +124,7 @@ connect(CounterElement, store);
 
 **mapStateToProps(oldState, newState)**
 
-The Web Component class implements the mapStateToProps function to get notified of state change.
-
-The first time mapStateToProps function is called, is during connectedCallback lifecycle. After that on any state change, the mapStateToProps function is called.
+The Web Component class implements the mapStateToProps function to get notified of state change. The first time mapStateToProps function is called, is during connectedCallback lifecycle. After that on any state change, the mapStateToProps function is called.
 
 **Arguments**
 
