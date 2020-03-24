@@ -13,6 +13,7 @@ Web Components binding for Redux.
   - [connect](#connect)
   - [mapStateToProps](#mapStateToProps)
   - [mapDispatchToProps](#mapDispatchToProps)
+- [Related Resources](#related-resources)
 
 ## Installation
 ### Script Tag
@@ -175,6 +176,9 @@ mapDispatchToProps(dispatch) {
     };
 }
 ```
+
+## Related Resources
+- [Web Components binding for Redux](https://medium.com/@spkamboj/web-components-binding-for-redux-251e8a5dff1e) - Medium article
 
 # License
 MIT
