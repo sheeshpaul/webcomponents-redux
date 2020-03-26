@@ -3,7 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import pkg from './package.json';
 import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
-import uglify from 'rollup-plugin-uglify-es';
+import { terser } from 'rollup-plugin-terser';
 
 const extensions = ['.ts'];
 
@@ -45,7 +45,7 @@ export default [
                 exclude: 'node_modules/**',
                 'process.env.NODE_ENV': JSON.stringify('production'),
             }),
-            uglify(),
+            terser(),
         ],
     },
 
